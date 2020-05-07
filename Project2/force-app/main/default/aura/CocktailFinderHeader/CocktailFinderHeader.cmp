@@ -1,7 +1,6 @@
 <aura:component>
-<aura:attribute type="String" name="CocktailFinderHeader" default="Cocktail Finder"/>
-<br/>
-<div class="slds-align_absolute-center_x-large">
-    {!v.CocktailFinderHeader}
+<aura:attribute type="String" name="title" default="Cocktail Finder"/>
+<div>
+        {!v.title}
 </div>
 </aura:component>	

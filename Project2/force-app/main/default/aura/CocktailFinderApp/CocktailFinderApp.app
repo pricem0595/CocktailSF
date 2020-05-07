@@ -1,3 +1,3 @@
 <aura:application extends="force:slds">
-<c:CocktailFinderHeader/>
+<c:CocktailFinderMain/>
 </aura:application>	

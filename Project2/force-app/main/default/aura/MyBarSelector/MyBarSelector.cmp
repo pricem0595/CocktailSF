@@ -1,0 +1,5 @@
+<aura:component>
+<div>
+    Test My Bar Component
+</div>
+</aura:component>	
