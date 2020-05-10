@@ -3,4 +3,4 @@
 <div>
         {!v.title}
 </div>
-</aura:component>	
+</aura:component>

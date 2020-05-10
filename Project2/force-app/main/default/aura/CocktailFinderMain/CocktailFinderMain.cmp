@@ -6,12 +6,12 @@
         <div class="slds-align_absolute-center slds-p-top_medium">
         <lightning:tabset selectedTabId="availableCocktailsTab">
                 <lightning:tab label="My Bar" id="myBarTab">
-                    {!c.MyBarSelector}
+                    <c:MyBarSelector/>
                 </lightning:tab>
                 <lightning:tab label="Available Cocktails" id="availableCocktailsTab">
-                    {!c.AvailableCocktailsSelector}
+                    <c:AvailableCocktailsSelector/>
                 </lightning:tab>
         </lightning:tabset>
         </div>
     </div>
-</aura:component>	
+</aura:component>

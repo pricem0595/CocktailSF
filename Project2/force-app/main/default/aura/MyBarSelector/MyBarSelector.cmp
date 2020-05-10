@@ -1,5 +1,9 @@
 <aura:component>
-<div>
-    Test My Bar Component
-</div>
-</aura:component>	
+    <aura:attribute name="ingredients" type="String[]" default="Red,Green,Blue"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <lightning:select name="ingredientInventory" label="Add an ingredient to your bar">
+        <aura:iteration items="{!v.ingredients}" var="ingredient">
+                <option text="{!ingredient}"></option>
+            </aura:iteration>
+    </lightning:select>
+</aura:component>
