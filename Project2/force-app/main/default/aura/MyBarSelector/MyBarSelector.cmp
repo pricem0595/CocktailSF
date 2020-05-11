@@ -6,4 +6,8 @@
                 <option text="{!ingredient}"></option>
             </aura:iteration>
     </lightning:select>
+    
+
+
+
 </aura:component>

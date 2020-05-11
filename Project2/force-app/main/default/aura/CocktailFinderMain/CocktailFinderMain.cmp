@@ -4,7 +4,7 @@
             <c:CocktailFinderHeader/>
         </div>
         <div class="slds-align_absolute-center slds-p-top_medium">
-        <lightning:tabset selectedTabId="availableCocktailsTab">
+        <lightning:tabset selectedTabId="myBarTab">
                 <lightning:tab label="My Bar" id="myBarTab">
                     <c:MyBarSelector/>
                 </lightning:tab>
