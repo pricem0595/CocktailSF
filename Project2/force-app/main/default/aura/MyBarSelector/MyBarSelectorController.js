@@ -3,9 +3,9 @@
         helper.ingredientCall(cmp);
      },
 
-     handleChange: function (cmp, event) {
+     handleChange: function (cmp, event, helper) {
         var selectedOptionValues = event.getParam("value");
-        console.log(selectedOptionValues);
+        helper.storeIngredients(cmp, selectedOptionValues);
     }
 
  })

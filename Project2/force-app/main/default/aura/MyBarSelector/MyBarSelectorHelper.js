@@ -4,7 +4,7 @@
     ingredientCall: function(cmp){        
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = false;
-        var ingredientList = [];
+        var ingredientsList = [];
 
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
@@ -13,21 +13,19 @@
                         var singleObj = {}
                         singleObj['label'] = value;
                         singleObj['value'] = value;
-                        ingredientList.push(singleObj);
+                        ingredientsList.push(singleObj);
                   }
                 });
-                cmp.set('v.ingredientsList', ingredientList);
+                cmp.set('v.ingredientsList', ingredientsList);
             }
         });
         
         xhr.open("GET", "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list");
         xhr.send();
+    },
+
+    storeIngredients: function(cmp, selectedIngredients) {
+        console.log(asdf);
     }
-
-    
-
-
-
-
 
 })
