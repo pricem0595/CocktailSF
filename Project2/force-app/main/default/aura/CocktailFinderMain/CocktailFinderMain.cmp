@@ -5,10 +5,10 @@
         </div>
         <div class="slds-align_absolute-center slds-p-top_medium">
         <lightning:tabset selectedTabId="myBarTab">
-                <lightning:tab label="My Bar" id="myBarTab">
+                <lightning:tab label="Ingredients" id="myBarTab">
                     <c:MyBarSelector/>
                 </lightning:tab>
-                <lightning:tab label="Available Cocktails" id="availableCocktailsTab">
+                <lightning:tab label="Cocktails" id="availableCocktailsTab">
                     <c:AvailableCocktailsSelector/>
                 </lightning:tab>
         </lightning:tabset>

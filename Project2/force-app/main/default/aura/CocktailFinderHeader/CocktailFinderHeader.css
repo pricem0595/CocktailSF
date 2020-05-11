@@ -1,5 +1,7 @@
 .THIS {
+    width:100%;
     text-align: center;
     font-size: 100px;
-    color:darkgoldenrod;
+    color:palegoldenrod;
+    background-color: gray;
 }

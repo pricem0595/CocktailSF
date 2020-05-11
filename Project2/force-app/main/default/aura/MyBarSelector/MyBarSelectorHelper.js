@@ -25,7 +25,7 @@
     },
 
     storeIngredients: function(cmp, selectedIngredients) {
-        console.log(asdf);
+        console.log(selectedIngredients);
     }
 
 })

@@ -1,2 +1,22 @@
-.THIS {
+.THIS.dualBox{
+    margin-left: 25%;
+}
+
+.THIS .slds-form-element__legend{
+    margin-left: 18%;
+}
+
+.THIS .dualBoxContents{
+    color:navy;
+}
+
+.THIS .slds-form-element__label{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkgoldenrod;
+}
+
+.THIS .slds-button{
+    height: 100px;
 }

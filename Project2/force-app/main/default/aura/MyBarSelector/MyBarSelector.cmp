@@ -1,12 +1,14 @@
 <aura:component controller="IngredientController">
-    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
-    <aura:attribute name="ingredientsList" type="List" />
-    <lightning:dualListbox name="ingredients"
-                           label= "Select your ingredients"
-                           sourceLabel="Available"
-                           selectedLabel="Selected"
-                           fieldLevelHelp="Select your preferred cocktail ingredients"
-                           options="{!v.ingredientsList}"
-                           onchange="{! c.handleChange }"/>
-
+<aura:handler name="init" value="{! this }" action="{! c.init }"/>
+<aura:attribute name="ingredientsList" type="List" />
+    <div class="dualBox">
+    <lightning:dualListbox class="dualBoxContents"
+        name="ingredients"
+        disableReordering="true"
+        label= "Select your ingredients"
+        sourceLabel="Available"
+        selectedLabel="Selected"
+        options="{!v.ingredientsList}"
+        onchange="{! c.handleChange }"/>
+    </div>
 </aura:component>
