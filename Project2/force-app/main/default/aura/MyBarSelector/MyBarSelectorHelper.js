@@ -1,28 +1,32 @@
 
 ({
 
-    ingredientCall: function(cmp){
-        var data = null;
-        
+    ingredientCall: function(cmp){        
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = false;
-        
+        var ingredientList = [];
+
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
-                var ingredientList = [];
                 const obj = JSON.parse(this.responseText, (key, value) =>    {
                   if (key == "strIngredient1"){
-                    ingredientList.push(value);
+                        var singleObj = {}
+                        singleObj['label'] = value;
+                        singleObj['value'] = value;
+                        ingredientList.push(singleObj);
                   }
                 });
-                cmp.set('v.ingredients', ingredientList);
+                cmp.set('v.ingredientsList', ingredientList);
             }
         });
         
         xhr.open("GET", "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list");
-        //xhr.setRequestHeader("key","1");
         xhr.send();
-        }
+    }
+
+    
+
+
 
 
 
