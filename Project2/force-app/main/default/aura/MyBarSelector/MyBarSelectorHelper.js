@@ -8,13 +8,13 @@
 
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === this.DONE) {
-                const obj = JSON.parse(this.responseText, (key, value) =>    {
-                  if (key == "strIngredient1"){
+                const obj = JSON.parse(this.responseText, (key, value) => {
+                    if (key == "strIngredient1"){
                         var singleObj = {}
                         singleObj['label'] = value;
                         singleObj['value'] = value;
                         ingredientsList.push(singleObj);
-                  }
+                    }
                 });
                 cmp.set('v.ingredientsList', ingredientsList);
             }

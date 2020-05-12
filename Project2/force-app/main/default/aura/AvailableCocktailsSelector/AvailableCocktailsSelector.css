@@ -1,2 +1,12 @@
-.THIS {
+.THIS .navHeader{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkgoldenrod;
+}
+
+.THIS .navPanel {
+    height: 60vh;
+    overflow: auto;
+    color: darkgoldenrod;
 }

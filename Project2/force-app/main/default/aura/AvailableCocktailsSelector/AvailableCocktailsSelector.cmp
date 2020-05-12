@@ -1,33 +1,32 @@
 <aura:component>
-    <aura:attribute name="navigationData" type="Object" description="The list of sections and their items." />
-    <aura:attribute name="selectedItem" type="String" />
-    <aura:attribute name="targetIngredients" type="String" default="nulllllzz" />
-    <aura:handler event="c:PassedIngredients" action="{!c.getIngredients}"/>
+    <aura:attribute name="drinkData" type="List" description="The list of sections and their items." />
+    <aura:attribute name="ingredientPlaceholder" type="String"/>
+    <aura:handler event="c:PassedIngredients" action="{!c.getCocktails}"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
-<div class="slds-grid">
-    <div class="slds-col slds-size_1-of-3">
-        <lightning:verticalNavigation onselect="{! c.handleSelect }" selectedItem="{! v.selectedItem }">
+
+<aura:if isTrue="{!v.ingredientPlaceholder}">
+    <div class="slds-grid">
+
+        <div class="slds-col slds-size_1-of-3">
+            <p class="navHeader slds-p-top_medium slds-p-bottom_large">Drinks:</p>
+            <lightning:verticalNavigation class="navPanel" onselect="{! c.handleSelect }">
+                <aura:iteration items="{!v.drinkData[0].drinks }" var="item">
+                    <lightning:verticalNavigationItem label="{! item.strDrink }" name="{! item.idDrink }"/>
+                </aura:iteration>
+            </lightning:verticalNavigation>
+        </div>
+
+        <div class="slds-col slds-size_2-of-3">
+
+            Info goes here
+
+        </div>
+
+    </div>
+<aura:set attribute="else">
     
-            <aura:iteration items="{! v.navigationData }" var="section">
-                <lightning:verticalNavigationSection label="{! section.label }">
+    Else Component Goes Here
 
-                    <aura:iteration items="{! section.items }" var="item">
-                        <lightning:verticalNavigationItem label="{! item.label }" name="{! item.name }"/>
-                    </aura:iteration>
-
-                </lightning:verticalNavigationSection>
-            </aura:iteration>
-
-        </lightning:verticalNavigation>
-    </div>
-    <div class="slds-col slds-size_2-of-3">
-
-        Info goes here {!v.targetIngredients}
-
-
-
-
-    </div>
-
-</div>
+</aura:set>
+</aura:if>
 </aura:component>
