@@ -1,5 +1,9 @@
 <aura:component>
-    <aura:attribute name="drinkData" type="List" description="The list of sections and their items." />
+    <aura:attribute name="drinkData" type="List" description="Full Drinks List" />
+    <aura:attribute name="cocktailInstructions" type="String"/>
+    <aura:attribute name="cocktailTitle" type="String"/>
+    <aura:attribute name="cocktailIngredients" type="List"/>
+    <aura:attribute name="cocktailPicture" type="String"/>
     <aura:attribute name="ingredientPlaceholder" type="String"/>
     <aura:handler event="c:PassedIngredients" action="{!c.getCocktails}"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }" />

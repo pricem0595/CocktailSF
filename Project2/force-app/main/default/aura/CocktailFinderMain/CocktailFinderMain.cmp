@@ -1,9 +1,9 @@
 <aura:component>
-    <div class="slds-grid slds-wrap">
-        <div class="slds-col slds-size_1-of-1">
+    <div class="slds-grid slds-grid_vertical">
+        <div class="slds-col">
             <c:CocktailFinderHeader/>
         </div>
-        <div class="slds-align_absolute-center slds-p-top_medium">
+        <div class="slds-col slds-align_absolute-center slds-p-top_medium">
         <lightning:tabset selectedTabId="availableCocktailsTab">
                 <lightning:tab label="Ingredients" id="myBarTab">
                     <c:MyBarSelector/>
