@@ -20,12 +20,8 @@
             }
         });
         
-        xhr.open("GET", "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list");
+        xhr.open("GET", "https://www.thecocktaildb.com/api/json/v2/9973533/list.php?i=list");
         xhr.send();
-    },
-
-    storeIngredients: function(cmp, selectedIngredients) {
-        console.log(selectedIngredients);
-    }
+    } 
 
 })

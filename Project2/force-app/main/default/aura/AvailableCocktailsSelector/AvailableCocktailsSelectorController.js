@@ -1,5 +1,5 @@
 ({
-    init: function (component) {
+    init: function (cmp, event, helper) {
         var sections = [
           {
             label: "Reports",
@@ -44,7 +44,19 @@
           }
         ];
 
-        component.set('v.initiallySelected', 'default_recent');
-        component.set('v.navigationData', sections);
-    }
+        cmp.set('v.initiallySelected', 'default_recent');
+        cmp.set('v.navigationData', sections);
+        console.log(cmp.get('v.targetIngredients'))
+    },
+
+    handleSelect: function(component,event,helper){
+      var selected = event.getParam('name');
+      console.log(selected);
+
+    },
+
+    getIngredients: function(cmp, event, helper) {
+      helper.getIngredientHelper(cmp,event);
+  }
+
 });

@@ -4,8 +4,11 @@
      },
 
      handleChange: function (cmp, event, helper) {
-        var selectedOptionValues = event.getParam("value");
-        helper.storeIngredients(cmp, selectedOptionValues);
-    }
+        var selectedOptionValues = event.getParam("value").toString();
+            var evt = $A.get('e.c:PassedIngredients');
+            evt.setParams({ 'Selected_Ingredients': selectedOptionValues});
+            evt.fire();
+        }
+
 
  })

@@ -1,30 +1,18 @@
 <aura:component>
     <aura:attribute name="navigationData" type="Object" description="The list of sections and their items." />
-    <aura:attribute name="initiallySelected" type="String" description="The name of the initially selected item." />
-
+    <aura:attribute name="selectedItem" type="String" />
+    <aura:attribute name="targetIngredients" type="String" default="nulllllzz" />
+    <aura:handler event="c:PassedIngredients" action="{!c.getIngredients}"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
 <div class="slds-grid">
     <div class="slds-col slds-size_1-of-3">
-        <lightning:verticalNavigation selectedItem="{! v.initiallySelected }">
-
+        <lightning:verticalNavigation onselect="{! c.handleSelect }" selectedItem="{! v.selectedItem }">
+    
             <aura:iteration items="{! v.navigationData }" var="section">
                 <lightning:verticalNavigationSection label="{! section.label }">
 
                     <aura:iteration items="{! section.items }" var="item">
-                        <aura:if isTrue="{! !empty(item.icon) }">
-
-                            <lightning:verticalNavigationItemIcon
-                                label="{! item.label }"
-                                name="{! item.name }"
-                                iconName="{! item.icon }" />
-
-                            <aura:set attribute="else">
-                                <lightning:verticalNavigationItem
-                                    label="{! item.label }"
-                                    name="{! item.name }" />
-                            </aura:set>
-
-                        </aura:if>
+                        <lightning:verticalNavigationItem label="{! item.label }" name="{! item.name }"/>
                     </aura:iteration>
 
                 </lightning:verticalNavigationSection>
@@ -33,7 +21,8 @@
         </lightning:verticalNavigation>
     </div>
     <div class="slds-col slds-size_2-of-3">
-        Info goes here
+
+        Info goes here {!v.targetIngredients}
 
 
 
