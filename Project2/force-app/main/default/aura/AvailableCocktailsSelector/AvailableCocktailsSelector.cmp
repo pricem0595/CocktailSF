@@ -1,36 +1,73 @@
 <aura:component>
     <aura:attribute name="drinkData" type="List" description="Full Drinks List" />
     <aura:attribute name="cocktailInstructions" type="String"/>
-    <aura:attribute name="cocktailTitle" type="String"/>
     <aura:attribute name="cocktailIngredients" type="List"/>
+    <aura:attribute name="cocktailMeasurements" type="List"/>
     <aura:attribute name="cocktailPicture" type="String"/>
     <aura:attribute name="ingredientPlaceholder" type="String"/>
     <aura:handler event="c:PassedIngredients" action="{!c.getCocktails}"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }" />
 
-<aura:if isTrue="{!v.ingredientPlaceholder}">
-    <div class="slds-grid">
+    <div class="slds-grid slds-gutters">
 
-        <div class="slds-col slds-size_1-of-3">
-            <p class="navHeader slds-p-top_medium slds-p-bottom_large">Drinks:</p>
-            <lightning:verticalNavigation class="navPanel" onselect="{! c.handleSelect }">
-                <aura:iteration items="{!v.drinkData[0].drinks }" var="item">
-                    <lightning:verticalNavigationItem label="{! item.strDrink }" name="{! item.idDrink }"/>
-                </aura:iteration>
-            </lightning:verticalNavigation>
-        </div>
+        <aura:if isTrue="{!v.ingredientPlaceholder}">
+            <div class="slds-col slds-size_1-of-3">
+                <p class="navHeader slds-p-top_medium slds-p-bottom_large">Drinks:</p>
+                <lightning:verticalNavigation class="navPanel" onselect="{! c.handleSelect }">
+                    <aura:iteration items="{!v.drinkData[0].drinks }" var="item">
+                        <lightning:verticalNavigationItem label="{! item.strDrink }" name="{! item.idDrink }"/>
+                    </aura:iteration>
+                </lightning:verticalNavigation>
+            </div>
 
-        <div class="slds-col slds-size_2-of-3">
+            <aura:if isTrue="{!v.cocktailInstructions}">
+                <div class="slds-col slds-size_2-of-3">
 
-            Info goes here
+                    <div class="slds-grid slds-wrap">
 
-        </div>
+                        <div class="image slds-col slds-size_1-of-3">
+                            <img src="{!v.cocktailPicture}"/>
+                        </div>
+                        
+                        <table class="ingredientTable slds-col slds-size_1-of-3">
+                            <tr>
+                                <th class="tableTitle">Ingredients:</th>
+                            </tr>
+                            <aura:iteration items="{!v.cocktailIngredients}" var="ingredient">
+                            <tr>
+                                <td>{!ingredient}</td>
+                            </tr>
+                            </aura:iteration>
+                        </table>
+
+                        <table class="ingredientTable slds-col slds-size_1-of-3">
+                            <tr>
+                                <th class="tableTitle">Measurements:</th>
+                            </tr>
+                            <aura:iteration items="{!v.cocktailMeasurements}" var="measurement">
+                            <tr>
+                                <td>{!measurement}</td>
+                            </tr>
+                            </aura:iteration>
+                        </table>
+
+                        <div class="instructions slds-col slds-size_1-of-1">
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </aura:if>
+
+            <aura:set attribute="else">
+        
+                Else Component Goes Here
+            
+            </aura:set>
+
+        </aura:if>
 
     </div>
-<aura:set attribute="else">
-    
-    Else Component Goes Here
-
-</aura:set>
-</aura:if>
 </aura:component>
