@@ -29,7 +29,7 @@
                             <img src="{!v.cocktailPicture}"/>
                         </div>
                         
-                        <table class="ingredientTable slds-col slds-size_1-of-3">
+                        <table class="ingredientTable slds-col slds-size_1-of-3 ">
                             <tr>
                                 <th class="tableTitle">Ingredients:</th>
                             </tr>
@@ -51,7 +51,7 @@
                             </aura:iteration>
                         </table>
 
-                        <div class="instructions slds-col slds-size_1-of-1">
+                        <div class="instructions slds-col slds-size_1-of-1 slds-p-top_large">
                             <p class="tableTitle">Instructions:</p>
                             <p class="instructionBox">{!v.cocktailInstructions}</p>
                         </div>
@@ -62,9 +62,11 @@
             </aura:if>
 
             <aura:set attribute="else">
-        
-                Else Component Goes Here
-            
+                <div class="elseMessage slds-col slds-size_1-of-1">
+                    Head to the Ingredients tab and select the ingredients you want in a cocktail
+                    <br/><br/>
+                    Then select the Cocktails tab and a list of cocktails that include those ingredients will display!
+                </div>
             </aura:set>
 
         </aura:if>

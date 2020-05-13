@@ -26,3 +26,11 @@
     max-width: 70%;
     color: navy;
 }
+
+.THIS .elseMessage{
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkgoldenrod;
+}
