@@ -10,3 +10,19 @@
     overflow: auto;
     color: darkgoldenrod;
 }
+
+.THIS .ingredientTable{
+    color: navy;
+}
+
+.THIS .tableTitle{
+    margin-left: 10vw;
+    font-size: 20px;
+    font-weight: bold;
+    color: darkgoldenrod;
+}
+
+.THIS .instructionBox{
+    max-width: 70%;
+    color: navy;
+}
